@@ -1,6 +1,7 @@
 # The main job for jobs.
 resources:
   jobs:
+    run-hob:
       name: jobs
 
       trigger:
