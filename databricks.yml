@@ -18,4 +18,4 @@ targets:
     mode: development
     default: true
     workspace:
-      https://adb-3134439694201356.16.azuredatabricks.net
+      host: https://adb-3134439694201356.16.azuredatabricks.net
