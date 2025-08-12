@@ -19,7 +19,12 @@ resources:
           job_cluster_key: job_cluster
           notebook_task:
             notebook_path: ../src/notebook.ipynb
+      tasks:
 
+        - task_key: refresh_pipeline
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.dlt_pipeline.id}
+            
       job_clusters:
         - job_cluster_key: job_cluster
           new_cluster:
