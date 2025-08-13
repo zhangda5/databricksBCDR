@@ -3,7 +3,7 @@ resources:
   pipelines:
     dlt_pipeline:
       name: dlt_pipeline
-      catalog: demo
+      catalog: databrickscicd
       schema: dlt_${bundle.target}
       libraries:
         - notebook:
