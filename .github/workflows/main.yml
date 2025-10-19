@@ -1,6 +1,6 @@
 # This workflow validates, deploys, and runs the specified bundle
 # within a pre-production target named "dev".
-name: 'Dev deployment'
+name: 'Test deployment'
 
 # Ensure that only a single job or workflow using the same concurrency group
 # runs at a time.
@@ -33,11 +33,16 @@ jobs:
       # See https://github.com/databricks/setup-cli
       - uses: databricks/setup-cli@main
 
-      # Deploy the bundle to the "dev" target as defined
+      # Deploy the bundle to the "Test" target as defined
       # in the bundle's settings file.
+      - run: databricks bundle validate
+       
       - run: databricks bundle deploy
+
+      - run: databricks bundle run lab
+      
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.PAT }}
-          DATABRICKS_BUNDLE_ENV: dev
+          DATABRICKS_BUNDLE_ENV: Test
 
