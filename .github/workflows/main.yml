@@ -1,6 +1,6 @@
 # This workflow validates, deploys, and runs the specified bundle
 # within a pre-production target named "dev".
-name: 'Test deployment'
+name: 'dev deployment'
 
 # Ensure that only a single job or workflow using the same concurrency group
 # runs at a time.
@@ -40,5 +40,5 @@ jobs:
         working-directory: .
         env:
           DATABRICKS_TOKEN: ${{ secrets.PAT }}
-          DATABRICKS_BUNDLE_ENV: Test
+          DATABRICKS_BUNDLE_ENV: dev
 
